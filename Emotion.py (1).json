@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "python",
+      "display_name": "Python (Pyodide)",
+      "language": "python"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "python",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "07b1f0b8-04b1-4c9c-a699-084770018ca7",
+      "cell_type": "code",
+      "source": "# Social Media Emotion Detector in Pyodide-compatible Python\n# Rule-based approach (lightweight for browser-based execution)\n\n# Define a simple keyword-based function\ndef detect_emotion(text):\n    text = text.lower()\n    if any(word in text for word in [\"happy\", \"joy\", \"excited\", \"awesome\", \"great\"]):\n        return \"Joy\"\n    elif any(word in text for word in [\"sad\", \"depressed\", \"cry\", \"unhappy\"]):\n        return \"Sadness\"\n    elif any(word in text for word in [\"angry\", \"mad\", \"furious\", \"rage\"]):\n        return \"Anger\"\n    elif any(word in text for word in [\"afraid\", \"scared\", \"terrified\", \"anxious\"]):\n        return \"Fear\"\n    elif any(word in text for word in [\"surprised\", \"shocked\", \"amazed\"]):\n        return \"Surprise\"\n    else:\n        return \"Neutral\"\n\n# Sample inputs\nexamples = [\n    \"I'm so happy and excited today!\",\n    \"This is the worst day ever. I feel so sad.\",\n    \"I can't believe how angry I am right now!\",\n    \"I'm scared about the exam tomorrow.\",\n    \"Nothing much happening. Just a regular day.\"\n]\n\n# Run predictions\nfor sentence in examples:\n    emotion = detect_emotion(sentence)\n    print(f\"Text: {sentence}\\nDetected Emotion: {emotion}\\n\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Text: I'm so happy and excited today!\nDetected Emotion: Joy\n\nText: This is the worst day ever. I feel so sad.\nDetected Emotion: Sadness\n\nText: I can't believe how angry I am right now!\nDetected Emotion: Anger\n\nText: I'm scared about the exam tomorrow.\nDetected Emotion: Fear\n\nText: Nothing much happening. Just a regular day.\nDetected Emotion: Neutral\n\n"
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "2a77f8bc-a963-4bb6-ada5-ac72bf93a127",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
